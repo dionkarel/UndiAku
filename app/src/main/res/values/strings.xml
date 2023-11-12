@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">UndiAku</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="number_picker">Number Picker</string>
+    <string name="name_picker">Name Picker</string>
+    <string name="insert_name">Insert Name</string>
+    <string name="add_to_list">Add to list</string>
+    <string name="winner">Winner</string>
+    <string name="set_name">Set Name</string>
+    <string name="get_name">Get Name</string>
+    <string name="reset_list">Reset List</string>
+    <string name="name">Name</string>
+    <string name="_00">00</string>
+    <string name="until">~</string>
+    <string name="set_number">Set Number</string>
+    <string name="get_number">Get Number</string>
+    <string name="reset_number">Reset Number</string>
+    <string name="set_number_picker">Set Number Picker</string>
+    <string name="min_number">Min Number</string>
+    <string name="max_number">Max Number</string>
+    <string name="_0">0</string>
+</resources>

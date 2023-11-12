@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.NumberPickerFragment">
+
+    <TextView
+        android:id="@+id/tv_resultNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_00"
+        android:textSize="96sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/bt_getNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_until"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/until"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/bt_getNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.053" />
+
+    <TextView
+        android:id="@+id/tv_minNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/_00"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_until"
+        app:layout_constraintEnd_toStartOf="@+id/tv_until"
+        app:layout_constraintTop_toTopOf="@+id/tv_until"
+        app:layout_constraintVertical_bias="0.053" />
+
+    <TextView
+        android:id="@+id/tv_maxNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/_00"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_until"
+        app:layout_constraintStart_toEndOf="@+id/tv_until"
+        app:layout_constraintTop_toTopOf="@+id/tv_until" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fb_setNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/baseline_check_box_outline_blank_24"
+        android:contentDescription="@string/set_number"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_getNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bt_getNumber"
+        app:layout_constraintTop_toTopOf="@+id/bt_getNumber" />
+
+    <Button
+        android:id="@+id/bt_getNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:text="@string/get_number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fb_resetNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/baseline_settings_backup_restore_24"
+        android:contentDescription="@string/reset_number"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_getNumber"
+        app:layout_constraintEnd_toStartOf="@+id/bt_getNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bt_getNumber" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

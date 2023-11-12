@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/nav_numberPicker">
+
+    <fragment
+        android:id="@+id/nav_numberPicker"
+        android:name="com.example.undiaku.ui.fragment.NumberPickerFragment"
+        android:label="Number Picker"
+        tools:layout="@layout/fragment_number_picker" />
+
+    <fragment
+        android:id="@+id/nav_namePicker"
+        android:name="com.example.undiaku.ui.fragment.NamePickerFragment"
+        android:label="Name Picker"
+        tools:layout="@layout/fragment_name_picker" />
+
+
+</navigation>

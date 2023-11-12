@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.NumberPickerFragment">
+
+    <EditText
+        android:id="@+id/edt_addName"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/insert_name"
+        android:inputType="text"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
+
+    <ImageButton
+        android:id="@+id/bt_addName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/add_to_list"
+        android:src="@drawable/baseline_add_24"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_addName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/edt_addName"
+        app:layout_constraintTop_toTopOf="@+id/edt_addName"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_listName"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_addName" />
+
+    <TextView
+        android:id="@+id/tv_resultName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/winner"
+        android:textSize="42sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/bt_getName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_listName" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/baseline_list_24"
+        android:contentDescription="@string/set_name"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_getName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bt_getName"
+        app:layout_constraintTop_toTopOf="@+id/bt_getName" />
+
+    <Button
+        android:id="@+id/bt_getName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:text="@string/get_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/baseline_settings_backup_restore_24"
+        android:contentDescription="@string/reset_list"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_getName"
+        app:layout_constraintEnd_toStartOf="@+id/bt_getName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bt_getName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

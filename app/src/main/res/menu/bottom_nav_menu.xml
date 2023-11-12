@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_numberPicker"
+        android:enabled="true"
+        android:icon="@drawable/number"
+        android:title="@string/number_picker" />
+    <item
+        android:id="@+id/nav_namePicker"
+        android:enabled="true"
+        android:icon="@drawable/raffle"
+        android:title="@string/name_picker" />
+
+    <!--
+    number picker icon :
+    <a href="https://www.flaticon.com/free-icons/number-1" title="number 1 icons">Number 1 icons created by Freepik - Flaticon</a>
+
+    name picker icon :
+    <a href="https://www.flaticon.com/free-icons/raffle" title="raffle icons">Raffle icons created by bsd - Flaticon</a>
+    -->
+</menu>
