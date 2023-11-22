@@ -28,18 +28,24 @@ class NamePickerFragment : Fragment() {
         _binding = FragmentNamePickerBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        nameAdapter = NameAdapter()
+        binding.rvListName.layoutManager = GridLayoutManager(activity, 4)
+        binding.rvListName.adapter = nameAdapter
+
+        setActionForButton()
+
+        return view
+    }
+
+    private fun setActionForButton() {
         binding.btAddName.setOnClickListener {
             val newName = binding.edtAddName.text.toString()
             if (newName.isNotEmpty()) {
                 names.add(ListNameModel(newName))
-                nameAdapter.notifyDataSetChanged()
+                nameAdapter.submitList(ArrayList(names))
                 binding.edtAddName.text.clear()
             }
         }
-
-        nameAdapter = NameAdapter(names)
-        binding.rvListName.layoutManager = GridLayoutManager(activity, 4)
-        binding.rvListName.adapter = nameAdapter
 
         binding.btGetName.setOnClickListener {
             if (names.isNotEmpty()) {
@@ -54,14 +60,20 @@ class NamePickerFragment : Fragment() {
                         val newIndex = (fraction * i + (1 - fraction) * (newData.size - 1)).toInt()
                         shuffledData[i] = newData[newIndex]
                     }
-                    nameAdapter.setData(shuffledData)
+                    nameAdapter.submitList(shuffledData)
                     binding.tvResultName.text = shuffledData[0].name
                 }
                 animator.start()
             }
         }
 
-        return view
+        binding.fbResetListName.setOnClickListener {
+            if (names.isNotEmpty()) {
+                names.clear()
+                nameAdapter.submitList(ArrayList(names))
+                binding.tvResultName.text = "" // Reset the displayed name
+            }
+        }
     }
 
     override fun onDestroyView() {

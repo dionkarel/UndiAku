@@ -55,17 +55,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_listName" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:src="@drawable/baseline_list_24"
-        android:contentDescription="@string/set_name"
-        app:layout_constraintBottom_toBottomOf="@+id/bt_getName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/bt_getName"
-        app:layout_constraintTop_toTopOf="@+id/bt_getName" />
-
     <Button
         android:id="@+id/bt_getName"
         android:layout_width="wrap_content"
@@ -77,6 +66,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fb_resetListName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"

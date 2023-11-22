@@ -1,18 +1,16 @@
 package com.example.undiaku.adapter
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.undiaku.R
 import com.example.undiaku.model.ListNameModel
 
-class NameAdapter(private val names: ArrayList<ListNameModel>) : RecyclerView.Adapter<NameAdapter.NameViewHolder>() {
-    inner class NameViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val nameTextView: TextView = itemView.findViewById(R.id.tv_name)
-    }
+class NameAdapter : ListAdapter<ListNameModel, NameAdapter.NameViewHolder>(NameDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NameViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_name, parent, false)
@@ -20,16 +18,22 @@ class NameAdapter(private val names: ArrayList<ListNameModel>) : RecyclerView.Ad
     }
 
     override fun onBindViewHolder(holder: NameViewHolder, position: Int) {
-        val name = names[position]
+        val name = getItem(position)
         holder.nameTextView.text = name.name
     }
 
-    override fun getItemCount() = names.size
-
-    @SuppressLint("NotifyDataSetChanged")
-    fun setData(newData: List<ListNameModel>) {
-        names.clear()
-        names.addAll(newData)
-        notifyDataSetChanged()
+    class NameViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val nameTextView: TextView = itemView.findViewById(R.id.tv_name)
     }
+
+    class NameDiffCallback : DiffUtil.ItemCallback<ListNameModel>() {
+        override fun areItemsTheSame(oldItem: ListNameModel, newItem: ListNameModel): Boolean {
+            return oldItem.name == newItem.name
+        }
+
+        override fun areContentsTheSame(oldItem: ListNameModel, newItem: ListNameModel): Boolean {
+            return oldItem == newItem
+        }
+    }
+
 }
