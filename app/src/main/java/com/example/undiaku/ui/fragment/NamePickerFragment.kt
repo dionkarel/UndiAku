@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.undiaku.adapter.NameAdapter
@@ -44,6 +45,8 @@ class NamePickerFragment : Fragment() {
                 names.add(ListNameModel(newName))
                 nameAdapter.submitList(ArrayList(names))
                 binding.edtAddName.text.clear()
+            } else {
+                Toast.makeText(this.activity, "Please insert the name", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -64,6 +67,8 @@ class NamePickerFragment : Fragment() {
                     binding.tvResultName.text = shuffledData[0].name
                 }
                 animator.start()
+            } else {
+                Toast.makeText(this.activity, "List name is empty", Toast.LENGTH_SHORT).show()
             }
         }
 
