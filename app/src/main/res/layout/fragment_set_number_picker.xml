@@ -15,6 +15,7 @@
         android:text="@string/set_number_picker"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:fontFamily="@font/handlee"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,6 +29,7 @@
         android:text="@string/min_number"
         android:textSize="14sp"
         android:textStyle="bold"
+        android:fontFamily="@font/handlee"
         app:layout_constraintEnd_toStartOf="@+id/tv_titleSetNumber"
         app:layout_constraintTop_toBottomOf="@+id/tv_titleSetNumber" />
 
@@ -39,6 +41,7 @@
         android:text="@string/max_number"
         android:textSize="14sp"
         android:textStyle="bold"
+        android:fontFamily="@font/handlee"
         app:layout_constraintStart_toEndOf="@+id/tv_titleSetNumber"
         app:layout_constraintTop_toBottomOf="@+id/tv_titleSetNumber" />
 
@@ -50,6 +53,7 @@
         android:inputType="number"
         android:textAlignment="center"
         android:textSize="16sp"
+        android:fontFamily="@font/handlee"
         android:hint="@string/_0"
         app:layout_constraintEnd_toEndOf="@+id/tv_textMinNumber"
         app:layout_constraintStart_toStartOf="@+id/tv_textMinNumber"
@@ -63,6 +67,7 @@
         android:inputType="number"
         android:textAlignment="center"
         android:textSize="16sp"
+        android:fontFamily="@font/handlee"
         android:hint="@string/_0"
         app:layout_constraintEnd_toEndOf="@+id/tv_textMaxNumber"
         app:layout_constraintStart_toStartOf="@+id/tv_textMaxNumber"
@@ -75,6 +80,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="46dp"
         android:text="@string/set_number"
+        android:fontFamily="@font/handlee"
         app:layout_constraintEnd_toEndOf="@+id/tv_titleSetNumber"
         app:layout_constraintStart_toStartOf="@+id/tv_titleSetNumber"
         app:layout_constraintTop_toBottomOf="@+id/edt_setMinNumber" />
