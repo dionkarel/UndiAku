@@ -7,11 +7,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.undiaku.databinding.FragmentNumberPickerBinding
 import com.example.undiaku.model.MinMaxModel
 import com.example.undiaku.model.PreferencesManager
 import kotlin.random.Random
 
+@Suppress("DEPRECATION")
 class NumberPickerFragment : Fragment() {
 
     private var _binding: FragmentNumberPickerBinding? = null
@@ -45,7 +47,11 @@ class NumberPickerFragment : Fragment() {
         }
 
         binding.btGetNumber.setOnClickListener {
-            getNumber()
+            if (minMaxModel.minNumber <= minMaxModel.maxNumber) {
+                getNumber()
+            } else {
+                Toast.makeText(requireContext(), "Invalid range", Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.fbResetNumber.setOnClickListener {
@@ -66,7 +72,7 @@ class NumberPickerFragment : Fragment() {
     }
 
     private fun getNumber() {
-        val randomNumber = Random.nextInt(minMaxModel.minNumber, minMaxModel.maxNumber)
+        val randomNumber = Random.nextInt(minMaxModel.minNumber, minMaxModel.maxNumber + 1)
         val resultTextView = binding.tvResultNumber
 
         val animator = ValueAnimator.ofObject(

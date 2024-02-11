@@ -11,7 +11,7 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="22dp"
         android:hint="@string/insert_name"
         android:inputType="text"
         android:fontFamily="@font/handlee"
@@ -36,9 +36,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_listName"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="22dp"
         android:layout_marginEnd="16dp"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,8 +59,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rv_listName"
-        app:layout_constraintVertical_bias="0.382" />
+        app:layout_constraintTop_toBottomOf="@+id/rv_listName" />
 
     <Button
         android:id="@+id/bt_getName"

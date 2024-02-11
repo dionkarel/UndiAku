@@ -63,21 +63,7 @@ class NamePickerFragment : Fragment() {
 
         binding.btGetName.setOnClickListener {
             if (names.isNotEmpty()) {
-                val newData = ArrayList(names.shuffled())
-
-                val animator = ValueAnimator.ofFloat(0f, 1f)
-                animator.duration = 2000
-                animator.addUpdateListener { animation ->
-                    val fraction = animation.animatedFraction
-                    val shuffledData = ArrayList(newData)
-                    for (i in 0 until newData.size) {
-                        val newIndex = (fraction * i + (1 - fraction) * (newData.size - 1)).toInt()
-                        shuffledData[i] = newData[newIndex]
-                    }
-                    nameAdapter.submitList(shuffledData)
-                    binding.tvResultName.text = shuffledData[0].name
-                }
-                animator.start()
+                getRandomName()
             } else {
                 Toast.makeText(this.activity, "List name is empty", Toast.LENGTH_SHORT).show()
             }
@@ -91,6 +77,24 @@ class NamePickerFragment : Fragment() {
                 binding.tvResultName.text = getString(R.string.winner)
             }
         }
+    }
+
+    private fun getRandomName() {
+        val newData = ArrayList(names.shuffled())
+
+        val animator = ValueAnimator.ofFloat(0f, 1f)
+        animator.duration = 2000
+        animator.addUpdateListener { animation ->
+            val fraction = animation.animatedFraction
+            val shuffledData = ArrayList(newData)
+            for (i in 0 until newData.size) {
+                val newIndex = (fraction * i + (1 - fraction) * (newData.size - 1)).toInt()
+                shuffledData[i] = newData[newIndex]
+            }
+            nameAdapter.submitList(shuffledData)
+            binding.tvResultName.text = shuffledData[0].name
+        }
+        animator.start()
     }
 
     override fun onDestroyView() {
