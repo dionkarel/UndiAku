@@ -52,10 +52,14 @@ class NamePickerFragment : Fragment() {
         binding.btAddName.setOnClickListener {
             val newName = binding.edtAddName.text.toString()
             if (newName.isNotEmpty()) {
-                names.add(ListNameModel(newName))
-                nameAdapter.submitList(ArrayList(names))
-                preferencesManager.saveNameList(names)
-                binding.edtAddName.text.clear()
+                if (!isNameAlreadyExists(newName)) {
+                    names.add(ListNameModel(newName))
+                    nameAdapter.submitList(ArrayList(names))
+                    preferencesManager.saveNameList(names)
+                    binding.edtAddName.text.clear()
+                } else {
+                    Toast.makeText(this.activity, "Name already exists", Toast.LENGTH_SHORT).show()
+                }
             } else {
                 Toast.makeText(this.activity, "Please insert the name", Toast.LENGTH_SHORT).show()
             }
@@ -77,6 +81,10 @@ class NamePickerFragment : Fragment() {
                 binding.tvResultName.text = getString(R.string.winner)
             }
         }
+    }
+
+    private fun isNameAlreadyExists(newName: String): Boolean {
+        return names.any { it.name.equals(newName, ignoreCase = true) }
     }
 
     private fun getRandomName() {
