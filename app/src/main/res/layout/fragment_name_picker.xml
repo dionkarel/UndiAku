@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_box"
         android:fontFamily="@font/handlee"
-        android:padding="8dp"
+        android:padding="16dp"
         android:text="@string/winner"
         android:textSize="42sp"
         android:textStyle="bold"

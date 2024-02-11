@@ -22,10 +22,23 @@ class PreferencesManager(context: Context) {
         return MinMaxModel(minNumber, maxNumber, resultNumber)
     }
 
+    fun saveNameList(names: List<ListNameModel>) {
+        val editor = sharedPreferences.edit()
+        val nameSet = HashSet<String>(names.map { it.name })
+        editor.putStringSet(KEY_NAME_LIST, nameSet)
+        editor.apply()
+    }
+
+    fun getNameList(): List<ListNameModel> {
+        val nameSet = sharedPreferences.getStringSet(KEY_NAME_LIST, HashSet<String>())
+        return nameSet?.map { ListNameModel(it) } ?: emptyList()
+    }
+
     companion object {
         private const val PREFS_NAME = "PreferencesManager"
         private const val KEY_MIN_NUMBER = "minNumber"
         private const val KEY_MAX_NUMBER = "maxNumber"
         private const val KEY_RESULT_NUMBER = "resultNumber"
+        private const val KEY_NAME_LIST = "nameList"
     }
 }
