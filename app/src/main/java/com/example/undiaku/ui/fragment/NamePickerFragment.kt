@@ -33,6 +33,7 @@ class NamePickerFragment : Fragment() {
         _binding = FragmentNamePickerBinding.inflate(inflater, container, false)
         val view = binding.root
 
+
         preferencesManager = PreferencesManager(requireContext())
         names = preferencesManager.getNameList() as ArrayList<ListNameModel>
 
